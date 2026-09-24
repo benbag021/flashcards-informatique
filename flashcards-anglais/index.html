@@ -1,1 +1,112 @@
-<!-- anglais -->
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>English CPGE — Flashcards</title><style>
+:root{--bg:#0b1020;--panel:#121a30;--card:#18223d;--text:#f6f7fb;--muted:#aeb9d5;--accent:#7aa2ff;--good:#69d59c;--bad:#ff8585}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(135deg,#090e1b,#111a31);color:var(--text);min-height:100vh}.wrap{max-width:900px;margin:auto;padding:20px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}h1{font-size:clamp(24px,5vw,38px);margin:10px 0 2px}.sub{color:var(--muted);margin:0 0 18px}.controls{display:flex;gap:8px;flex-wrap:wrap}.controls select,.controls button{background:var(--panel);color:var(--text);border:1px solid #293657;border-radius:12px;padding:10px 12px;font-size:15px}.stats{color:var(--muted);font-size:14px;margin:14px 0}.card{min-height:360px;background:linear-gradient(145deg,#18223d,#121a30);border:1px solid #2b395d;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 18px 50px #0006;cursor:pointer;user-select:none}.tag{color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em}.q{font-size:clamp(25px,5vw,40px);font-weight:800;margin:18px 0}.a{font-size:clamp(18px,3vw,25px);line-height:1.45;white-space:pre-line}.hint{color:var(--muted);font-size:14px;margin-top:22px}.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}.actions button{border:0;border-radius:14px;padding:14px;font-weight:800;font-size:16px}.no{background:#3b1e29;color:#ffc4c4}.flip{background:#25385f;color:white}.yes{background:#183b31;color:#bff7d9}.bottom{display:flex;justify-content:space-between;gap:10px;margin-top:10px}.bottom button{flex:1;background:transparent;border:1px solid #334469;color:var(--text);border-radius:12px;padding:11px}.small{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.5}@media(max-width:560px){.card{min-height:390px;padding:22px}.actions{grid-template-columns:1fr 1fr}.actions .flip{grid-column:1/-1;grid-row:1}.wrap{padding:14px}}</style></head><body><div class="wrap"><div class="top"><div><h1>English CPGE</h1><p class="sub">Grammaire + vocabulaire utile pour les concours</p></div><div class="controls"><select id="cat"></select><button id="shuffle">↻ Mélanger</button><button id="review">⚑ À revoir</button></div></div><div class="stats" id="stats"></div><div class="card" id="card"><div class="tag" id="tag"></div><div class="q" id="q"></div><div class="a" id="a" hidden></div><div class="hint" id="hint">Touchez la carte pour afficher la réponse</div></div><div class="actions"><button class="no" id="no">✕ À revoir</button><button class="flip" id="flip">Afficher</button><button class="yes" id="yes">✓ Je sais</button></div><div class="bottom"><button id="prev">← Précédente</button><button id="next">Suivante →</button></div><p class="small">Progression enregistrée sur cet appareil. Les cartes de vocabulaire associent traduction et usage utile en essai, synthèse ou khôlle.</p></div><script>
+const C=[];const add=(cat,q,a)=>C.push({cat,q,a});
+// Construction & grammar
+add('Construction','Ordre de base d’une phrase affirmative ?','SUJET + VERBE + COMPLÉMENT\nShe reads the news every morning.');
+add('Construction','Où placer un adverbe de fréquence ?','Avant le verbe principal : I often read.\nAprès BE : She is often late.');
+add('Construction','Question au présent simple ?','DO/DOES + sujet + base verbale ?\nDoes technology help us?');
+add('Construction','Négation au présent simple ?','do/does + NOT + base verbale\nHe does not agree.');
+add('Construction','Après un modal (can, must, should…) ?','MODAL + BASE VERBALE\nWe must act. ❌ must to act');
+add('Construction','Après WANT ?','want + TO + verbe\nThey want to regulate AI.');
+add('Construction','Après ENJOY / AVOID / CONSIDER ?','verbe + V-ING\nAvoid sharing personal data.');
+add('Construction','Après MAKE + personne ?','MAKE + personne + base verbale\nAI can make people rethink work.');
+add('Construction','Après LET + personne ?','LET + personne + base verbale\nLet users choose.');
+add('Construction','Après HELP ?','help + personne + (to) + verbe\nAI helps doctors (to) detect disease.');
+add('Construction','Comment traduire « il y a » ?','THERE IS + singulier / THERE ARE + pluriel.');
+add('Construction','Comment traduire « il faut » sans sujet précis ?','It is necessary to… / We need to… / One must…');
+add('Construction','Différence although / despite ?','ALTHOUGH + sujet + verbe\nDESPITE + nom ou V-ing');
+add('Construction','Après because / because of ?','BECAUSE + proposition\nBECAUSE OF + nom / groupe nominal');
+add('Construction','Structure avec not only… ?','not only A, but also B\nIt affects not only jobs but also education.');
+// Tenses
+add('Temps','Present simple : quand ?','Habitude, fait général, opinion.\nTechnology changes society.');
+add('Temps','Present continuous : forme ?','BE + V-ING\nAI is transforming the workplace.');
+add('Temps','Prétérit : forme et emploi ?','V-ed / forme irrégulière : action passée terminée.');
+add('Temps','Present perfect : forme ?','HAVE/HAS + participe passé.\nLien entre passé et présent.');
+add('Temps','SINCE ou FOR ?','SINCE + point de départ.\nFOR + durée.');
+add('Temps','AGO s’emploie avec quel temps ?','Avec le prétérit : It started two years ago.');
+add('Temps','Futur simple : forme ?','WILL + base verbale.');
+add('Temps','BE GOING TO sert surtout à…','Projet/intention ou prédiction fondée sur un indice.');
+// If
+add('IF / Conditionnels','Vérité générale avec IF ?','IF + présent → présent\nIf prices rise, consumers spend less.');
+add('IF / Conditionnels','Possibilité future avec IF ?','IF + présent → WILL + V\nIf AI improves, it will change many jobs.');
+add('IF / Conditionnels','Hypothèse peu réelle au présent ?','IF + prétérit → WOULD + V\nIf I were…');
+add('IF / Conditionnels','Regret / irréel du passé ?','IF + past perfect → WOULD HAVE + participe passé.');
+add('IF / Conditionnels','Peut-on mettre WILL juste après IF ?','En général NON dans une condition.\n❌ If it will happen… ✓ If it happens…');
+add('IF / Conditionnels','UNLESS signifie quoi ?','« sauf si / à moins que » = if…not.\nUnless we act…');
+// Modals
+add('Modaux','MUST exprime…','Obligation forte / nécessité. + base verbale');
+add('Modaux','SHOULD exprime…','Conseil / recommandation. + base verbale');
+add('Modaux','MAY / MIGHT expriment…','Possibilité. MIGHT est souvent plus incertain.');
+add('Modaux','CAN / COULD expriment…','Capacité/possibilité ; COULD peut être plus hypothétique/poli.');
+add('Modaux','Comment dire « aurait dû » ?','SHOULD HAVE + participe passé.');
+// Articles/quantifiers
+add('Déterminants','A ou AN ?','A devant un son consonne ; AN devant un son voyelle.');
+add('Déterminants','Quand employer THE ?','Quand le référent est identifié/spécifique ou unique dans le contexte.');
+add('Déterminants','MANY / MUCH ?','MANY + dénombrable pluriel ; MUCH + indénombrable.');
+add('Déterminants','FEW / A FEW ?','FEW = peu, idée négative ; A FEW = quelques, idée plus positive.');
+add('Déterminants','LITTLE / A LITTLE ?','Indénombrable : LITTLE = peu ; A LITTLE = un peu.');
+add('Déterminants','FEWER ou LESS ?','FEWER + dénombrables ; LESS + indénombrables.');
+// Relatives/connectors
+add('Relatifs','WHO renvoie à…','Une personne. The scientist who developed…');
+add('Relatifs','WHICH renvoie à…','Une chose / idée / animal.');
+add('Relatifs','WHOSE exprime…','La possession : whose data, whose decision…');
+add('Connecteurs','Cependant : 3 mots utiles ?','however / nevertheless / yet');
+add('Connecteurs','Par conséquent : 3 expressions ?','therefore / thus / as a result');
+add('Connecteurs','De plus : expressions soutenues ?','moreover / furthermore / in addition');
+add('Connecteurs','D’une part… d’autre part… ?','on the one hand… on the other hand…');
+add('Connecteurs','Alors que / tandis que pour opposer ?','whereas / while');
+add('Connecteurs','Même si / bien que ?','although / even though + proposition');
+add('Connecteurs','Afin de ?','in order to + V / so as to + V');
+add('Connecteurs','Par exemple ?','for example / for instance / such as + nom');
+// Common traps
+add('Pièges','« Information » est-il dénombrable ?','Non : information. ❌ informations / an information');
+add('Pièges','« Advice » est-il dénombrable ?','Non : advice. ✓ a piece of advice');
+add('Pièges','People : singulier ou pluriel ?','Pluriel : people ARE. Une personne = a person.');
+add('Pièges','« Actual » signifie « actuel » ?','Non. ACTUAL = réel. « actuel » = current/present.');
+add('Pièges','« Eventually » signifie « éventuellement » ?','Non. EVENTUALLY = finalement. « éventuellement » = possibly/perhaps.');
+add('Pièges','« Assist » signifie toujours « assister à » ?','Non. ASSIST = aider. « assister à » = attend.');
+add('Pièges','« Demand » = demander ?','DEMAND = exiger. « demander » = ask (for).');
+add('Pièges','« Society » ou « company » pour entreprise ?','COMPANY = entreprise ; SOCIETY = société au sens social.');
+// AI vocab
+add('Vocab — IA','artificial intelligence','intelligence artificielle (AI)');
+add('Vocab — IA','machine learning','apprentissage automatique');
+add('Vocab — IA','deep learning','apprentissage profond');
+add('Vocab — IA','an algorithm','un algorithme');
+add('Vocab — IA','a dataset','un jeu de données');
+add('Vocab — IA','training data','données d’entraînement');
+add('Vocab — IA','a large language model (LLM)','un grand modèle de langage');
+add('Vocab — IA','generative AI','IA générative');
+add('Vocab — IA','a prompt','une consigne/requête donnée à une IA');
+add('Vocab — IA','an AI-generated output','un résultat/contenu généré par IA');
+add('Vocab — IA','bias','biais');
+add('Vocab — IA','biased','biaisé');
+add('Vocab — IA','facial recognition','reconnaissance faciale');
+add('Vocab — IA','automation','automatisation');
+add('Vocab — IA','to automate a task','automatiser une tâche');
+add('Vocab — IA','job displacement','suppression/déplacement d’emplois');
+add('Vocab — IA','to replace workers','remplacer des travailleurs');
+add('Vocab — IA','to boost productivity','accroître la productivité');
+add('Vocab — IA','privacy','vie privée / confidentialité');
+add('Vocab — IA','data privacy','protection/confidentialité des données');
+add('Vocab — IA','surveillance','surveillance');
+add('Vocab — IA','misinformation','information fausse/trompeuse');
+add('Vocab — IA','a deepfake','un hypertrucage / deepfake');
+add('Vocab — IA','copyright infringement','violation du droit d’auteur');
+add('Vocab — IA','accountability','responsabilité / obligation de rendre des comptes');
+add('Vocab — IA','AI regulation','réglementation de l’IA');
+add('Vocab — IA','ethical concerns','préoccupations éthiques');
+add('Vocab — IA','human oversight','supervision humaine');
+// Environment
+add('Vocab — Environnement','climate change','changement climatique');add('Vocab — Environnement','global warming','réchauffement climatique');add('Vocab — Environnement','greenhouse gases','gaz à effet de serre');add('Vocab — Environnement','carbon emissions','émissions de carbone');add('Vocab — Environnement','carbon footprint','empreinte carbone');add('Vocab — Environnement','renewable energy','énergie renouvelable');add('Vocab — Environnement','fossil fuels','énergies fossiles');add('Vocab — Environnement','a drought','une sécheresse');add('Vocab — Environnement','a flood','une inondation');add('Vocab — Environnement','biodiversity loss','perte de biodiversité');add('Vocab — Environnement','sustainable development','développement durable');add('Vocab — Environnement','to curb emissions','réduire/freiner les émissions');
+// Society/media
+add('Vocab — Société','inequality','inégalité');add('Vocab — Société','the wealth gap','écart de richesse');add('Vocab — Société','living standards','niveau de vie');add('Vocab — Société','the cost of living','coût de la vie');add('Vocab — Société','social mobility','mobilité sociale');add('Vocab — Société','the workforce','population active / main-d’œuvre');add('Vocab — Société','unemployment','chômage');add('Vocab — Société','a shortage','une pénurie');add('Vocab — Société','to tackle an issue','s’attaquer à un problème');add('Vocab — Société','to raise awareness','sensibiliser');
+add('Vocab — Médias','social media','réseaux sociaux');add('Vocab — Médias','freedom of speech','liberté d’expression');add('Vocab — Médias','fake news','fausses informations');add('Vocab — Médias','fact-checking','vérification des faits');add('Vocab — Médias','an echo chamber','chambre d’écho informationnelle');add('Vocab — Médias','content moderation','modération des contenus');add('Vocab — Médias','to go viral','devenir viral');add('Vocab — Médias','media coverage','couverture médiatique');
+// Science tech/economy
+add('Vocab — Tech','a breakthrough','une avancée majeure');add('Vocab — Tech','cutting-edge technology','technologie de pointe');add('Vocab — Tech','innovation','innovation');add('Vocab — Tech','cybersecurity','cybersécurité');add('Vocab — Tech','a data breach','une fuite de données');add('Vocab — Tech','digital divide','fracture numérique');add('Vocab — Tech','to foster innovation','favoriser l’innovation');
+add('Vocab — Économie','economic growth','croissance économique');add('Vocab — Économie','a downturn','ralentissement économique');add('Vocab — Économie','inflation','inflation');add('Vocab — Économie','purchasing power','pouvoir d’achat');add('Vocab — Économie','supply and demand','offre et demande');add('Vocab — Économie','a stakeholder','partie prenante');add('Vocab — Économie','to invest in','investir dans');
+// Argumentation
+add('Vocab — Argumentation','to highlight','mettre en évidence / souligner');add('Vocab — Argumentation','to point out','faire remarquer / souligner');add('Vocab — Argumentation','to claim','affirmer (sans forcément prouver)');add('Vocab — Argumentation','to argue that…','soutenir / avancer que…');add('Vocab — Argumentation','to acknowledge','reconnaître / admettre');add('Vocab — Argumentation','to outweigh','l’emporter sur / être plus important que');add('Vocab — Argumentation','a drawback','un inconvénient');add('Vocab — Argumentation','a benefit','un avantage / bénéfice');add('Vocab — Argumentation','a major challenge','un défi majeur');add('Vocab — Argumentation','a controversial issue','une question controversée');add('Vocab — Argumentation','to be likely to + V','être susceptible de / avoir de fortes chances de');add('Vocab — Argumentation','to lead to','conduire à / entraîner');add('Vocab — Argumentation','to result in','entraîner / aboutir à');add('Vocab — Argumentation','to stem from','provenir de / découler de');
+let filtered=[],i=0,show=false,reviewOnly=false;const state=JSON.parse(localStorage.getItem('engcpge')||'{}');const cat=document.querySelector('#cat'),q=document.querySelector('#q'),a=document.querySelector('#a'),tag=document.querySelector('#tag'),hint=document.querySelector('#hint'),stats=document.querySelector('#stats');
+function setup(){let cats=['Toutes les cartes',...new Set(C.map(x=>x.cat))];cat.innerHTML=cats.map(x=>`<option>${x}</option>`).join('');apply()}function apply(){let v=cat.value||'Toutes les cartes';filtered=C.map((x,k)=>({...x,k})).filter(x=>(v==='Toutes les cartes'||x.cat===v)&&(!reviewOnly||state[x.k]==='no'));i=0;render()}function render(){if(!filtered.length){q.textContent='Aucune carte à revoir ici.';a.hidden=true;tag.textContent='';stats.textContent='';return}i=(i+filtered.length)%filtered.length;let x=filtered[i];tag.textContent=x.cat;q.textContent=x.q;a.textContent=x.a;a.hidden=!show;hint.textContent=show?'Touchez pour masquer':'Touchez la carte pour afficher la réponse';let known=Object.values(state).filter(x=>x==='yes').length;stats.textContent=`Carte ${i+1}/${filtered.length} • ${known}/${C.length} connues • ${C.length} cartes au total`}
+function flip(){show=!show;render()}document.querySelector('#card').onclick=flip;document.querySelector('#flip').onclick=flip;document.querySelector('#next').onclick=()=>{show=false;i++;render()};document.querySelector('#prev').onclick=()=>{show=false;i--;render()};document.querySelector('#yes').onclick=()=>{if(!filtered.length)return;state[filtered[i].k]='yes';localStorage.setItem('engcpge',JSON.stringify(state));show=false;i++;if(reviewOnly)apply();else render()};document.querySelector('#no').onclick=()=>{if(!filtered.length)return;state[filtered[i].k]='no';localStorage.setItem('engcpge',JSON.stringify(state));show=false;i++;render()};cat.onchange=()=>{reviewOnly=false;document.querySelector('#review').textContent='⚑ À revoir';apply()};document.querySelector('#shuffle').onclick=()=>{filtered.sort(()=>Math.random()-.5);i=0;show=false;render()};document.querySelector('#review').onclick=e=>{reviewOnly=!reviewOnly;e.target.textContent=reviewOnly?'✓ Toutes':'⚑ À revoir';apply()};setup();
+</script></body></html>
